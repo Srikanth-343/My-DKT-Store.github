@@ -1,0 +1,122 @@
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="{% block metadescription %}{% endblock %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <title>{% block title %} Register - DKT ARTs {% endblock %}</title>
+</head>
+<body>
+
+                                <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+                                <!-- Breadcrumb Section Begin -->
+<div>
+    <div class="breacrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                <p><a href="{% url 'shop:ShopHome' %}"><i class="fa fa-home"></i> Home</a>
+
+                    <span>Signup</span>
+                </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+     <!-- Breadcrumb Section Ends -->
+
+{% block content  %}
+<div>
+    {% if not form.is_valid %}
+	    <br>
+		<div class='mx-auto'>
+            <h1 class="text-center my_title" style="font-weight:600;">Create a New Account</h1>
+            <br>
+            <div class="col-9 col-sm-9 col-md-6 col-lg-5 mx-auto bg-light">
+                <br>
+                <p class="text-center" style="font-weight:600;">Enter the followin information to create a account.</p>
+
+                <form method="post" class="">
+                    {% csrf_token %}
+                    <p>{{form | crispy}}</p>
+                    <button type="submit"  class="btn btn-warning my_title" style="font-weight:600;" >signup </button>
+                </form><br><b>If you're already a User </b>
+
+
+                <a href="{% url 'shop:signin' %}" class="btn btn-warning my_title" style="font-weight:600;color:black;">Login</a>
+
+                <br>
+            </div>
+        </div>
+    {% else %}
+        <div class="mx-auto">
+            <br>
+            <h1 class="text-center my_title">Your account has been created Successfully</h1>
+            <br>
+            <div>
+                <p>
+                    Dear Customer,
+                    <br>
+                    Your are ready to use.
+                    <br>
+                    <a href="{% url 'shop:ShopHome' %}" class="btn btn-warning my_title" style="font-weight:600;"> Continue Shoping</a> and Enjoy the Dkt art works.
+                </p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+                                <br><br>
+
+{% endblock %}
+
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+  <div class="footer-copyright text-center py-3">
+    <a href="{% url 'shop:ShopHome' %}">@ArtStore.Com</a>
+  </div>
+</footer>
+<!-- Footer -->
+    <script src="{% static 'js/jquery-3.4.1.slim.min.js' %}" ></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.zoom.min.js' %}"></script>
+    <script src="{% static 'js/jquery.dd.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

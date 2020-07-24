@@ -1,0 +1,106 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%} Contact Us{% endblock %}
+{% block body %}
+<div class="breacrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text product-more">
+            <p><a href="{% url 'shop:ShopHome' %}"><i class="fa fa-home"></i> Home</a>
+                <a href="{% url 'shop:ShopHome' %}">Shop</a><span>Contact</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contact Section Begin -->
+    <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="contact-title">
+                        <h4>Contacts Us</h4>
+                        <p>Contact us often the go-to for a new visitor on a mission. It’s where they go when they have a question and truly want to speak to an individual at your organization.</p>
+                    </div>
+                    <div class="contact-widget">
+                        <div class="cw-item">
+                            <div class="ci-icon">
+                                <i class="ti-location-pin"></i>
+                            </div>
+                            <div class="ci-text">
+                                <span>Address:</span>
+                                <p>Ameerpet, Hyderabad, 500073 T.S India.</p>
+                            </div>
+                        </div>
+                        <div class="cw-item">
+                            <div class="ci-icon">
+                                <i class="ti-mobile"></i>
+                            </div>
+                            <div class="ci-text">
+                                <span>Phone:</span>
+                                <p>+91 8179034306</p>
+                            </div>
+                        </div>
+                        <div class="cw-item">
+                            <div class="ci-icon">
+                                <i class="ti-email"></i>
+                            </div>
+                            <div class="ci-text">
+                                <span>Email:</span>
+                                <p>devekatevishal001@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-lg-6 offset-lg-1">
+                    <div class="contact-form">
+                        <div class="leave-comment">
+                            <h4>Ask your Query ?</h4>
+                            <p style="font-weight:500">Our staff will contact you later and answer your questions.</p>
+                            <form action="#" class="comment-form" method="post">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <input type="text" id="name" name="name" placeholder="Your name">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="text" id="email" name="email" placeholder="Your email">
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <textarea id="query" name="query" placeholder="Tell me, How can i help you?"></textarea>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="tel" id="phone" name="phone" placeholder="Phone number">
+                                        <button type="submit" class="site-btn">Submit</button>
+                                    </div>
+
+                                </div>
+                            </form><br>or
+                            <p>Direct chat
+                                <a href="https://chat.whatsapp.com/KQFEGOglTI96RjNCnZNrXs" target="_blank" type="button" class="btn btn-outline-success my_custom_button">
+                                               <i class="fab fa-whatsapp"></i> whatsapp
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block js %}
+<script>
+
+{% if thank %}
+alert('Submitted Successfully!. we will get back you soon.');
+document.location = "/shop/contact/";
+{% endif %}
+
+</script>
+{% endblock %}

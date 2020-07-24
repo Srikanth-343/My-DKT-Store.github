@@ -1,0 +1,40 @@
+{% extends 'shop/basic.html' %}
+{% load static %}
+{% block title%} My Awesome Cart Tracker{% endblock %}
+{% block body %}
+<div class="breacrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text product-more">
+            <p><a href="{% url 'shop:ShopHome' %}"><i class="fa fa-home"></i> Home</a>
+                <a href="{% url 'shop:ShopHome' %}">Shop</a>
+                <a href="">Checkout</a>
+                <span>Payment Status</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="container">
+    <div class="col my-4">
+<div class="pd-desc">
+    <p style="">Payment status regarding your order_Id : <b>{{response.ORDERID}}</b></p>
+        {% if response.RESPCODE == '01' %}
+
+        <h5><img src="{% static 'img/check.gif' %}" height="60" width="80">
+    ORDER SUCCESS</h5>
+        {% else %}
+        <h5><img src="{% static 'img/The.gif' %}" height="60" width="80">
+    ORDER FAILURE</h5>
+        {% endif%}
+</div>
+    </div><br>
+    <p><b>Summery:</b> {{response}}</p>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+</script>
+{% endblock %}

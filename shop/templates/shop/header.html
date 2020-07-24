@@ -1,0 +1,211 @@
+{% load staticfiles %}
+     <!---<center><img src="{% static 'img/DKT.png' %}" alt="DKT ARTs"></center>--->
+
+ <header class="header-section">
+      <div class="header-top">
+            <div class="container">
+                <div class="ht-left">
+                    <div class="mail-service">
+                        <i class=" fa fa-envelope"></i>
+                        brtuyy.Arts@gmail.com
+                    </div>
+                    <div class="phone-service">
+                        <i class=" fa fa-phone"></i>
+                        +91 9542754524
+                    </div>
+                </div>
+                <div class="ht-right">
+
+                {% if request.user.is_authenticated and request.user.username %}
+
+                    <a href="{% url 'shop:signout' %}" class="login-panel">Sign Out <i class="fas fa-sign-out-alt"></i></a>
+                    <h1 class="login-panel">Welcome,{{request.user.username}} <i class="fas fa-user-tie"></i></h1>
+
+                {% else %}
+
+                    <a href="{% url 'shop:signup' %}" class="login-panel">Sign Up<i class="fas fa-user-plus"></i></a>
+                    <a href="{% url 'shop:signin' %}" class="login-panel">Sign In<i class="fas fa-sign-in-alt"></i></a>
+
+                {% endif %}
+
+                    <div class="top-social">
+                        <a href="https://www.facebook.com/devekate.vishal?fref=search&__tn__=%2Cd%2CP-R&eid=ARA_m6ZWV4qNumxpPvQ-rXHdXUrpwTNVXq5TrhWIxzSxTW0g65sMc38_ebOe4rHHB-7jfSSD47W5So5i" target="_blank"><i class="ti-facebook"></i></a>
+                        <a href="https://www.instagram.com/dkts_art_studio/" target="_blank"><i class="fab fa-instagram"></i></i></a>
+                        <a href="https://www.youtube.com/channel/UC1NwnUU8gISwy7BRtL1x_og" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="ti-twitter-alt"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+      <div class="container">
+            <div class="inner-header">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2">
+                        <div class="logo">
+                            <a href="base.html">
+                                <img src="{% static 'img/fff1.png' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7">
+                        <div class="advanced-search">
+                            <button type="button" class="category-btn">All Categories</button>
+
+
+                            <div class="input-group">
+                                <form class="form-inline my-2 my-lg-0" action="/shop/search/" method="get">
+                                    {% csrf_token %}
+                                <input type="text" placeholder="What do you need?" name="q">
+                                <button type="submit"><i class="ti-search"></i></button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-right col-md-3 mx-auto">
+                        <ul class="nav-right">
+                            <li class="cart-icon mx-2" >
+                                <a href="">
+                                    <i class="fas fa-shopping-cart"   type="button" data-html="true" class="btn btn-warning" data-container="body" id="popcart" data-toggle="popover" data-placement="bottom" data-content=""></i>
+                                    <span id="cart">0</span>
+                                </a>
+                            </li>
+
+                    <a href='/shop/checkout'><button class='btn btn-warning' id ='checkout'>Checkout</button></a>
+                    <button class='btn btn-warning' onclick='clearCart()' id ='clearCart'>Clear<i class="fas fa-shopping-cart"></i></button>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-item ">
+            <div class="container">
+               <!--   <div class="nav-depart">
+                    <div class="depart-btn">
+                      <i class="ti-menu"></i>
+                        All
+                        <ul class="depart-hover">
+                            <li><a class="active" href="">All Products</a></li>
+                            {% for cat in links %}
+                                <li class=""><a href="{{ cat.get_url }}">{{ cat.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>-->
+                <nav class="nav-menu mobile-menu">
+                    <ul>
+                        <li class='active'><a href="{% url 'shop:Blog' %}">Home</a></li>
+                        <li><a href="{% url 'shop:ShopHome' %}">Shop</a></li>
+                        <li><a href="{% url 'shop:TrackingStatus' %}">Tracker</a></li>
+                        <li><a href="{% url 'shop:AboutUs' %}">About Us</a></li>
+
+                       <!--
+
+                       <li><a href="./blog.html">Blog</a></li>-->
+                        <li><a href="{% url 'shop:ContactUs' %}">Contact</a>
+
+                        </li>
+                        <li><a href="#">Pages</a>
+                            <ul class="dropdown">
+                                <li><a href="{% url 'shop:signup' %}">Register</a></li>
+                                <li><a href="{% url 'shop:signin' %}">Login</a></li>
+                                <li><a href="{% url 'shop:signout' %}">Logout</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+        </div>
+ </header>
+
+ <!-- Header End -->
+
+
+{% block js %}
+<script>
+if (localStorage.getItem('cart') == null) {
+    var cart = {};
+} else {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    updateCart(cart);
+}
+// If the add to cart button is clicked, add/increment the item
+//
+    $('.divpr').on('click', 'a.cart', function(){
+    var idstr = this.id.toString();
+    if (cart[idstr] != undefined) {
+        cart[idstr] = cart[idstr] + 1;
+    } else {
+        cart[idstr] = 1;
+    }
+    updateCart(cart);
+});
+//Add Popover to cart
+$(function () {
+  $('[data-toggle="popover"]').popover()});
+updatePopover(cart);
+function updatePopover(cart)
+    {
+    console.log('We are inside updatePopover');
+    var popStr = "";
+    popStr = popStr + "<h5> Cart for your items</h5><div class='mx-2 my-2'>";
+    var i = 1;
+        for (var item in cart){
+            popStr = popStr + "<b>" + i + "</b>. ";
+            popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 19) + "... Qty: " + cart[item] + '<br>';
+            i = i+1;
+        }
+    popStr = popStr + "</div> <a href='/shop/checkout'><button class='btn btn-warning' id ='checkout'>Checkout</button></a> <button class='btn btn-warning' onclick='clearCart()' id ='clearCart'>Clear Cart</button>     "
+    console.log(popStr);
+    document.getElementById('popcart').setAttribute('data-content', popStr);
+    $(function () {
+        $('[data-toggle="popover"]').popover()});
+    }
+
+function clearCart() {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    for (var item in cart) {
+        document.getElementById('div' + item).innerHTML = '<button id="' + item + '" class="btn btn-warning cart">Add To Cart</button>'
+    }
+    localStorage.clear();
+    cart = {};
+    updateCart(cart);
+}
+
+function updateCart(cart) {
+     var sum = 0;
+    for (var item in cart) {
+         sum = sum + cart[item];
+        document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='btn btn-warning minus'>-</button> <span id='val" + item + "'>" + cart[item] + "</span> <button id='plus" + item + "' class='btn btn-warning plus'> + </button>";
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.getElementById('cart').innerHTML = sum;
+    console.log(cart);
+    updatePopover(cart);
+}
+// If plus or minus button is clicked, change the cart as well as the display value
+$('.divpr').on("click", "button.minus", function() {
+    a = this.id.slice(7, );
+    cart['pr' + a] = cart['pr' + a] - 1;
+    cart['pr' + a] = Math.max(0, cart['pr' + a]);
+    document.getElementById('valpr' + a).innerHTML = cart['pr' + a];
+    updateCart(cart);
+});
+$('.divpr').on("click", "button.plus", function() {
+    a = this.id.slice(6, );
+    cart['pr' + a] = cart['pr' + a] + 1;
+    document.getElementById('valpr' + a).innerHTML = cart['pr' + a];
+    updateCart(cart);
+});
+   </script>
+      {% endblock %}
+
+
+
+

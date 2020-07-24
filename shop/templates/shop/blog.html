@@ -1,0 +1,132 @@
+{% extends 'shop/basic.html' %}
+{% load static %}
+
+
+{% block body %}
+
+
+
+
+     <section class="hero-section">
+          <!-------------------------------------------------------------------------------------->
+          <div class="hero-items owl-carousel">
+            <div class="single-hero-items set-bg" data-setbg="{% static 'img/q2.jpeg' %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <span>Arts, Frames</span>
+                            <h1>Pencil Art</h1>
+                            <p>The artist is in love with a blank canvas, a pencil,
+                            As soon as his hand has rendered them immortal, he regards them with horror; and woe
+to him if he remains in love with them.</p>
+                            <a href="{% url 'shop:ShopHome' %}" class="primary-btn">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="off-card">
+                        <h2>Micro<span>Art</span></h2>
+                    </div>
+                </div>
+            </div>
+      <!-------------------------------------------------------------------------------------->
+
+            <div class="single-hero-items set-bg" data-setbg="{% static 'img/bb.jpeg' %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <span>Arts, Frames</span>
+                            <h1>Paper Art</h1>
+                            <p>The artist is in love with a blank canvas, an empty sheet of paper,
+                            As soon as his hand has rendered them immortal, he regards them with horror; and woe
+to him if he remains in love with them.</p>
+                            <a href="{% url 'shop:ShopHome' %}" class="primary-btn">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="off-card">
+                        <h2>Art <span>Store</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Banner Section Begin -->
+    <div class="banner-section spad">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <a href="{% url 'shop:ShopHome' %}">
+                    <div class="single-banner">
+                        <img src="{% static 'img/sketch.jpeg' %}" alt="" height="250" width="250">
+                        <div class="inner-text">
+                            <h4>Sketch</h4>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col-lg-4">
+                    <a href="{% url 'shop:ShopHome' %}">
+                    <div class="single-banner">
+                        <img src="{% static 'img/frame1.jpeg' %}" alt="" height="250" width="250">
+                        <div class="inner-text">
+                            <h4>Frame</h4>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col-lg-4">
+                    <a href="{% url 'shop:ShopHome' %}">
+                    <div class="single-banner">
+                        <img src="{% static 'img/v3.jpg' %}" alt="" height="250" width="250">
+                        <div class="inner-text">
+                            <h4>MicroArt</h4>
+                        </div>
+                    </div>
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner Section End -->
+
+ <div class="benefit-items">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="{% static 'img/icon-1.png' %}" alt="">
+                            </div>
+
+                            <div class="sb-text">
+                                <h6>Fast Shipping</h6>
+                                <p>For all order over 99$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="{% static 'img/icon-2.png' %}" alt="">
+                            </div>
+                            <div class="sb-text">
+                                <h6>Delivery On Time</h6>
+                                <p>If good have problems</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="{% static 'img/icon-1.png' %}" alt="">
+                            </div>
+                            <div class="sb-text">
+                                <h6>Secure Payment</h6>
+                                <p>100% secure payment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
