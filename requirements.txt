@@ -1,4 +1,4 @@
-Django==3.2.12
+Django==3.2.25
 django-bootstrap4==3.0.1
 django-crispy-forms==1.13.0
 python
