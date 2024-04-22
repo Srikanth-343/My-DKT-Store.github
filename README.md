@@ -15,6 +15,8 @@ DKT Micro Art is made using these technologies:
 - **Backend**: Python with Django framework
 - **Database**: SQLite3
 - **Development Environment**: PyCharm IDE
+- **Template desiginer**: Jinja
+
 
 ### Features
 
@@ -22,9 +24,23 @@ Enjoy these features on DKT Micro Art:
 
 - **Explore**: Find a wide range of micro art pieces including tiny paintings, sculptures, and photography.
 - **Search**: Use filters to narrow down your search by artist, style, or price.
-- **Checkout**: Buy securely with various payment options.
+- **Checkout**: PayTm - Buy securely with payment options.
 - **Accounts**: Create an account to save your favorite micro art, track orders, and get personalized recommendations.
 
+#### In summary, the MVC/MVT pattern in Django works as follows:
+
+
+**Model (M)**: Defines the data structure and interacts with the database.
+
+##### models.py - in this python file we create django.db models like Product, Order, OrderUpdate and Contact.
+
+View (V): Processes requests, retrieves data from models, and passes it to templates for rendering.
+
+views.py - ProductView, Product tracker, product search, Paytm checkout, signupView, signinView and signoutView.
+
+Template (T) /Controllers(C): Renders HTML pages, incorporating dynamic content provided by views.
+
+  
 ### Deployment
 
 DKT Micro Art is hosted on reliable cloud platforms like AWS.
