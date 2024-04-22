@@ -49,6 +49,19 @@ DKT Micro Art is hosted on reliable cloud platforms like AWS.
 
 To start exploring the world of miniature masterpieces with DKT Micro Art. Browse, shop, and enjoy tiny treasures!
 
+### Installation
+Clone the repository: git clone
+Navigate to the project directory: cd Company_Information_Storing
+Install dependencies: pip install -r requirements.txt
+Run migrations: python manage.py migrate
+Start the development server: python manage.py runserver
+
+### Usage
+Access the admin panel to manage company records: http://localhost:8000/admin
+Username: admin
+Password: admin
+Use the provided views and templates to interact with the application
+
 ---
 
 This version emphasizes the focus on micro art while still providing technical details and information about the platform. Adjustments can be made as needed to better fit your project's specifics.
