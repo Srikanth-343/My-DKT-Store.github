@@ -27,8 +27,7 @@ Enjoy these features on DKT Micro Art:
 - **Checkout**: PayTm - Buy securely with payment options.
 - **Accounts**: Create an account to save your favorite micro art, track orders, and get personalized recommendations.
 
-#### In summary, the MVC/MVT pattern in Django works as follows:
-- ** **
+### In summary, the MVC/MVT pattern in Django works as follows:
 
 **Model (M)**: Defines the data structure and interacts with the database.
 
