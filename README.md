@@ -51,15 +51,22 @@ To start exploring the world of miniature masterpieces with DKT Micro Art. Brows
 
 ### Installation
 Clone the repository: git clone
+
 Navigate to the project directory: cd Company_Information_Storing
+
 Install dependencies: pip install -r requirements.txt
+
 Run migrations: python manage.py migrate
+
 Start the development server: python manage.py runserver
 
 ### Usage
 Access the admin panel to manage company records: http://localhost:8000/admin
+
 Username: admin
+
 Password: admin
+
 Use the provided views and templates to interact with the application
 
 ---
