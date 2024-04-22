@@ -28,18 +28,19 @@ Enjoy these features on DKT Micro Art:
 - **Accounts**: Create an account to save your favorite micro art, track orders, and get personalized recommendations.
 
 #### In summary, the MVC/MVT pattern in Django works as follows:
-
+- ** **
 
 **Model (M)**: Defines the data structure and interacts with the database.
 
-##### models.py - in this python file we create django.db models like Product, Order, OrderUpdate and Contact.
+- **models.py** - in this python file we create django.db models like Product, Order, OrderUpdate and Contact.
 
 View (V): Processes requests, retrieves data from models, and passes it to templates for rendering.
 
-views.py - ProductView, Product tracker, product search, Paytm checkout, signupView, signinView and signoutView.
+- **views.py** - ProductView, Product tracker, product search, Paytm checkout, signupView, signinView and signoutView.
 
 Template (T) /Controllers(C): Renders HTML pages, incorporating dynamic content provided by views.
 
+- **urls.py** - Renders HTML pages, incorporating dynamic content provided by views.
   
 ### Deployment
 
