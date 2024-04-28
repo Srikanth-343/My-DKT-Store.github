@@ -52,7 +52,7 @@ To start exploring the world of miniature masterpieces with DKT Micro Art. Brows
 ### Installation
 Clone the repository: git clone
 
-Navigate to the project directory: cd Company_Information_Storing
+Navigate to the project directory: cd project_name
 
 Install dependencies: pip install -r requirements.txt
 
