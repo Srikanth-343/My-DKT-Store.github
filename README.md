@@ -5,6 +5,9 @@
 
 Welcome to DKT Micro Art, your premier destination for discovering and purchasing exquisite miniature masterpieces from talented artists around the nation. DKT Micro Art is dedicated to showcasing the intricate beauty of micro art, offering a diverse collection of tiny paintings, sculptures, photography, and more.
 
+![Screenshot (67)](https://github.com/Srikanth-343/My-DKT-Store.github/assets/57741770/3b1f8a43-575d-481a-9d82-894709d43bba)
+
+
 ## Technical Details
 
 ### Technology Used
