@@ -1,6 +1,6 @@
-Django==3.2.12
-django-bootstrap4==3.0.1
-django-crispy-forms==1.13.0
+Django
+django-bootstrap4
+django-crispy-forms
 crispy-bootstrap4
 pycryptodome
 Pillow
