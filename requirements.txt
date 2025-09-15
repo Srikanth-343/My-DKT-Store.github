@@ -1,7 +1,6 @@
 Django==3.2.12
 django-bootstrap4==3.0.1
 django-crispy-forms==1.13.0
-python
 pip install django-crispy-forms
 pip install crispy-bootstrap4
 pip install pycryptodome
